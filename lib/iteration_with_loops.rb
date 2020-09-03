@@ -1,21 +1,27 @@
-
 def find_min_in_nested_arrays(src)
-  week_lows = []
-  day_index = 0
-  while day_index < src.length do
-    hour_index = 0
-    the_low = 100
-    while hour_index < src[day_index].length do
-        if src[day_index][hour_index] < the_low
-          the_low = src[day_index][hour_index]
-        end
-      hour_index += 1
+  lows_of_the_week = []
+  days = 0
+  while days < src.length do
+    hours = 0
+    lowest_temp = 100
+    while hours < src[days].length do
+      if src[days][hours] < lowest_temp
+        lowest_temp = src[days][hours]
+      end
+      hours +=1
     end
-    week_lows << the_low
-    day_index += 1
+    lows_of_the_week << lowest_temp
+    days += 1
   end
-week_lows
+  lows_of_the_week
 end
+
+
+
+
+
+
+
 
 
 # src will be an array of arrays of integers
